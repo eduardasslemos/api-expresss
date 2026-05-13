@@ -205,9 +205,9 @@ function removerProduto(req: Request, res: Response): void{
     }
 }
 
-app.post('/api/product', novoProduto);
-app.get('/api/product/:id', buscarProduto);
-app.put('/api/product/:id', atualizarProduto);
-app.delete('/api/product/:id', removerProduto);
+app.post('/api/produto', novoProduto);
+app.get('/api/produto/:id', buscarProduto);
+app.put('/api/produto/:id', atualizarProduto);
+app.delete('/api/produto/:id', removerProduto);
 
 app.listen(PORT, () => console.log(`API em execução no URL: http://localhost:${PORT}`))
