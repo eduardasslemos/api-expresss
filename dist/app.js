@@ -58,6 +58,23 @@ function novoProduto(req, res) {
         });
     }
 }
+function listarProdutos(req, res) {
+    try {
+        if (produtos.length === 0) {
+            res.status(404).json({
+                Message: "Não há produtos"
+            });
+            return;
+        }
+        
+        res.status(200).json(produtos);
+    }
+    catch (e) {
+        res.status(500).json({
+            Message: e.message
+        });
+    }
+}
 function buscarProduto(req, res) {
     try {
         let id = Number(req.params.id);
@@ -165,6 +182,7 @@ function removerProduto(req, res) {
     }
 }
 app.post('/api/produto', novoProduto);
+app.get('/api/produto', listarProdutos);
 app.get('/api/produto/:id', buscarProduto);
 app.put('/api/produto/:id', atualizarProduto);
 app.delete('/api/produto/:id', removerProduto);

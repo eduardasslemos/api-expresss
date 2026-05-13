@@ -75,6 +75,23 @@ function novoProduto (req: Request, res: Response): void {
     }
 }
 
+function listarProdutos (req: Request, res: Response): void {
+    try {
+        if (produtos.length === 0) {
+            res.status(404).json({
+                Message: "Não há produtos"
+            });
+            return;
+        }
+
+        res.status(200).json(produtos);
+    } catch (e: unknown) {
+        res.status(500).json({
+            Message: (e as Error).message
+        });
+    }
+}
+
 function buscarProduto(req: Request, res: Response): void{
     try{
         let id = Number(req.params.id);
@@ -206,6 +223,7 @@ function removerProduto(req: Request, res: Response): void{
 }
 
 app.post('/api/produto', novoProduto);
+app.get('/api/produto', listarProdutos);
 app.get('/api/produto/:id', buscarProduto);
 app.put('/api/produto/:id', atualizarProduto);
 app.delete('/api/produto/:id', removerProduto);
