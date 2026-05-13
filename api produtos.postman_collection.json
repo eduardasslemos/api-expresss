@@ -1,0 +1,112 @@
+{
+  "info": {
+    "_postman_id": "c0fa6b80-5468-4ec7-9fa0-da7d6eb039b8",
+    "name": "api produtos",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54272958",
+    "_collection_link": "https://go.postman.co/collection/54272958-c0fa6b80-5468-4ec7-9fa0-da7d6eb039b8?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "novoProduto",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"id\": 2,\r\n    \"nome\": \"Caneta\",\r\n    \"preco\": 5.50,\r\n    \"fabricante\": {\r\n    \"nome\": \"BIC\",\r\n        \"endereco\": {\r\n        \"cidade\": \"Manaus\",\r\n        \"pais\": \"Brasil\"\r\n        }\r\n    }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/produto",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "produto"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "buscarProduto",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/produto/2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "produto",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "atualizarProduto",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"id\": 2,\r\n    \"nome\": \"Caneta\",\r\n    \"preco\": 5.50,\r\n    \"fabricante\": {\r\n    \"nome\": \"BIC\",\r\n        \"endereco\": {\r\n        \"cidade\": \"São Paulo\",\r\n        \"pais\": \"Brasil\"\r\n        }\r\n    }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/produto/2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "produto",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "removerProduto",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/produto/2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "produto",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
